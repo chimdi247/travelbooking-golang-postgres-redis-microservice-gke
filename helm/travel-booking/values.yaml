@@ -4,7 +4,7 @@ namespace: travel-booking
 frontend:
   deploymentname: frontend-deployment
   servicename: frontend-service
-  image: us-central1-docker.pkg.dev/test-project-492810/travel-booking/frontend:latest
+  image: us-central1-docker.pkg.dev/project-522024ff-8338-453d-a3d/travel-booking/frontend:1.0.1
   replicas: 1
   hpa: frontend-autoscaler
   host: travel.example.com
@@ -14,7 +14,7 @@ frontend:
 userService:
   deploymentname: user-service-deployment
   servicename: user-service-service
-  image: us-central1-docker.pkg.dev/test-project-492810/travel-booking/user-service:latest
+  image: us-central1-docker.pkg.dev/project-522024ff-8338-453d-a3d/travel-booking/user-service:1.0.1
   replicas: 1
   hpa: user-service-autoscaler
   host: api.travel.example.com
@@ -24,7 +24,7 @@ userService:
 searchService:
   deploymentname: search-service-deployment
   servicename: search-service-service
-  image: us-central1-docker.pkg.dev/test-project-492810/travel-booking/search-service:latest
+  image: us-central1-docker.pkg.dev/project-522024ff-8338-453d-a3d/travel-booking/search-service:1.0.1
   replicas: 1
   hpa: search-service-autoscaler
 
@@ -32,7 +32,7 @@ searchService:
 bookingService:
   deploymentname: booking-service-deployment
   servicename: booking-service-service
-  image: us-central1-docker.pkg.dev/test-project-492810/travel-booking/booking-service:latest
+  image: us-central1-docker.pkg.dev/project-522024ff-8338-453d-a3d/travel-booking/booking-service:1.0.1
   replicas: 1
   hpa: booking-service-autoscaler
 
@@ -40,7 +40,7 @@ bookingService:
 paymentService:
   deploymentname: payment-service-deployment
   servicename: payment-service-service
-  image: us-central1-docker.pkg.dev/test-project-492810/travel-booking/payment-service:latest
+  image: us-central1-docker.pkg.dev/project-522024ff-8338-453d-a3d/travel-booking/payment-service:1.0.1
   replicas: 1
   hpa: payment-service-autoscaler
 
@@ -48,7 +48,7 @@ paymentService:
 notificationService:
   deploymentname: notification-service-deployment
   servicename: notification-service-service
-  image: us-central1-docker.pkg.dev/test-project-492810/travel-booking/notification-service:latest
+  image: us-central1-docker.pkg.dev/project-522024ff-8338-453d-a3d/travel-booking/notification-service:1.0.1
   replicas: 1
   hpa: notification-service-autoscaler
 
@@ -79,7 +79,7 @@ redis:
 # ─── Gateway ──────────────────────────────────────────────────────────────────
 gateway:
   name: travel-booking-gateway
-  domain: vijaygiduthuri.in
+  domain: vhbj.site
   staticIPName: travel-booking-ip
   certificateName: travel-booking-cert
 

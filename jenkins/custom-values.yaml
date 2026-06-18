@@ -124,7 +124,7 @@ controller:
     - build-timeout:latest
 
   javaOpts: -Xms2000m -Xmx2000m
-  jenkinsUrl: "http://vijaygiduthuri.in/jenkins/"
+  jenkinsUrl: "http://vhbj.site/jenkins/"
   jenkinsUriPrefix: "/jenkins"
   resources:
     limits:
