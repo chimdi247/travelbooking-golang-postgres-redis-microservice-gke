@@ -426,7 +426,6 @@ EOF
 Jenkins runs in the `default` namespace (not `travel-booking`). We need to create an HTTPRoute and a HealthCheckPolicy so the Gateway can route `/jenkins` traffic to the Jenkins service.
 
 **Why do we need a HealthCheckPolicy?**
-
 By default, GCP's load balancer health check probes `/` on the backend service. But Jenkins is configured with a URI prefix `/jenkins`, so its health endpoint is at `/jenkins/login` — not `/`. Without the HealthCheckPolicy, GCP will mark Jenkins as **UNHEALTHY** and return "no healthy upstream".
 
 #### Apply Jenkins HealthCheckPolicy
