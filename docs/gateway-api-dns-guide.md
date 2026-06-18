@@ -277,7 +277,7 @@ spec:
   - name: http
     port: 80
     protocol: HTTP
-    hostname: vijaygiduthuri.in
+    hostname: vhbj.site
     allowedRoutes:
       namespaces:
         from: All
@@ -306,7 +306,7 @@ spec:
   - name: travel-booking-gateway
     namespace: travel-booking
   hostnames:
-  - vijaygiduthuri.in
+  - vhbj.site
   rules:
   - matches:
     - path:
@@ -326,7 +326,7 @@ spec:
   - name: travel-booking-gateway
     namespace: travel-booking
   hostnames:
-  - vijaygiduthuri.in
+  - vhbj.site
   rules:
   - matches:
     - path:
@@ -346,7 +346,7 @@ spec:
   - name: travel-booking-gateway
     namespace: travel-booking
   hostnames:
-  - vijaygiduthuri.in
+  - vhbj.site
   rules:
   - matches:
     - path:
@@ -366,7 +366,7 @@ spec:
   - name: travel-booking-gateway
     namespace: travel-booking
   hostnames:
-  - vijaygiduthuri.in
+  - vhbj.site
   rules:
   - matches:
     - path:
@@ -386,7 +386,7 @@ spec:
   - name: travel-booking-gateway
     namespace: travel-booking
   hostnames:
-  - vijaygiduthuri.in
+  - vhbj.site
   rules:
   - matches:
     - path:
@@ -406,7 +406,7 @@ spec:
   - name: travel-booking-gateway
     namespace: travel-booking
   hostnames:
-  - vijaygiduthuri.in
+  - vhbj.site
   rules:
   - matches:
     - path:
@@ -474,7 +474,7 @@ spec:
   - name: travel-booking-gateway
     namespace: travel-booking
   hostnames:
-  - vijaygiduthuri.in
+  - vhbj.site
   rules:
   - matches:
     - path:
@@ -502,7 +502,7 @@ kubectl get httproute jenkins-httproute -n default
 kubectl get healthcheckpolicy -n default
 
 # Test Jenkins access via domain (after DNS is configured)
-curl -s -o /dev/null -w "%{http_code}" http://vijaygiduthuri.in/jenkins/login
+curl -s -o /dev/null -w "%{http_code}" http://vhbj.site/jenkins/login
 # Expected: 200
 ```
 
@@ -519,15 +519,15 @@ kubectl get httproute -n default
 # HOSTNAMES column should show vijaygiduthuri.in for each route
 
 # Test frontend
-curl -s -o /dev/null -w "%{http_code}" http://vijaygiduthuri.in/
+curl -s -o /dev/null -w "%{http_code}" http://vhbj.site/
 # Expected: 200
 
 # Test API
-curl -s http://vijaygiduthuri.in/api/search/flights?from=NYC&to=LAX
+curl -s http://vhbj.site/api/search/flights?from=NYC&to=LAX
 # Expected: JSON response with flights
 
 # Test Jenkins
-curl -s -o /dev/null -w "%{http_code}" http://vijaygiduthuri.in/jenkins/login
+curl -s -o /dev/null -w "%{http_code}" http://vhbj.site/jenkins/login
 # Expected: 200
 
 # Verify raw IP no longer works (expected — domain is required now)
@@ -546,8 +546,8 @@ curl -s -o /dev/null -w "%{http_code}" http://<GATEWAY_IP>/
 | 5 | Update all app HTTPRoutes with hostname | `kubectl apply -f` (6 HTTPRoutes above) |
 | 6 | Apply Jenkins HealthCheckPolicy | `kubectl apply -f` (HealthCheckPolicy above) |
 | 7 | Apply Jenkins HTTPRoute | `kubectl apply -f` (Jenkins HTTPRoute above) |
-| 8 | Verify HTTP works | `curl http://vijaygiduthuri.in/` |
-| 9 | Verify Jenkins works | `curl http://vijaygiduthuri.in/jenkins/login` |
+| 8 | Verify HTTP works | `curl http://vhbj.site/` |
+| 9 | Verify Jenkins works | `curl http://vhbj.site/jenkins/login` |
 
 ---
 
@@ -559,48 +559,48 @@ Once DNS is configured, you can access the application at:
 
 | URL | Description |
 |-----|-------------|
-| `http://vijaygiduthuri.in/` | Home page (redirects to search) |
-| `http://vijaygiduthuri.in/login` | Login page |
-| `http://vijaygiduthuri.in/register` | Registration page |
-| `http://vijaygiduthuri.in/search` | Search flights and hotels |
-| `http://vijaygiduthuri.in/booking-summary` | Booking review page |
-| `http://vijaygiduthuri.in/payment` | Payment page |
-| `http://vijaygiduthuri.in/my-trips` | View all bookings |
+| `http://vhbj.site/` | Home page (redirects to search) |
+| `http://vhbj.site/login` | Login page |
+| `http://vhbj.site/register` | Registration page |
+| `http://vhbj.site/search` | Search flights and hotels |
+| `http://vhbj.site/booking-summary` | Booking review page |
+| `http://vhbj.site/payment` | Payment page |
+| `http://vhbj.site/my-trips` | View all bookings |
 
 ### Jenkins (CI/CD)
 
 | URL | Description |
 |-----|-------------|
-| `http://vijaygiduthuri.in/jenkins/` | Jenkins dashboard |
-| `http://vijaygiduthuri.in/jenkins/login` | Jenkins login page |
-| `http://vijaygiduthuri.in/jenkins/blue` | Blue Ocean pipeline UI |
+| `http://vhbj.site/jenkins/` | Jenkins dashboard |
+| `http://vhbj.site/jenkins/login` | Jenkins login page |
+| `http://vhbj.site/jenkins/blue` | Blue Ocean pipeline UI |
 
 ### API Endpoints (Backend Services)
 
 | Service | Base URL | Key Endpoints |
 |---------|----------|---------------|
-| **User Service** | `http://vijaygiduthuri.in/api/users` | |
+| **User Service** | `http://vhbj.site/api/users` | |
 | | `POST /api/users/register` | Register a new user |
 | | `POST /api/users/login` | Login and get JWT token |
 | | `GET /api/users/profile` | Get user profile (auth required) |
 | | `PUT /api/users/profile` | Update user profile (auth required) |
-| **Search Service** | `http://vijaygiduthuri.in/api/search` | |
+| **Search Service** | `http://vhbj.site/api/search` | |
 | | `GET /api/search/flights?from=NYC&to=LAX` | Search flights |
 | | `GET /api/search/flights/:id` | Get flight by ID |
 | | `GET /api/search/hotels?city=Paris` | Search hotels |
 | | `GET /api/search/hotels/:id` | Get hotel by ID |
-| **Booking Service** | `http://vijaygiduthuri.in/api/bookings` | |
+| **Booking Service** | `http://vhbj.site/api/bookings` | |
 | | `POST /api/bookings/flight` | Book a flight (auth required) |
 | | `POST /api/bookings/hotel` | Book a hotel (auth required) |
 | | `GET /api/bookings/user/:userId` | Get user's bookings (auth required) |
 | | `GET /api/bookings/:bookingId` | Get booking details (auth required) |
 | | `PUT /api/bookings/:bookingId/cancel` | Cancel a booking (auth required) |
-| **Payment Service** | `http://vijaygiduthuri.in/api/payments` | |
+| **Payment Service** | `http://vhbj.site/api/payments` | |
 | | `POST /api/payments/process` | Process a payment (auth required) |
 | | `GET /api/payments/:paymentId` | Get payment details (auth required) |
 | | `GET /api/payments/booking/:bookingId` | Get payment by booking (auth required) |
 | | `POST /api/payments/refund` | Refund a payment (auth required) |
-| **Notification Service** | `http://vijaygiduthuri.in/api/notifications` | |
+| **Notification Service** | `http://vhbj.site/api/notifications` | |
 | | `GET /api/notifications/user/:userId` | Get user notifications |
 | | `PUT /api/notifications/:id/read` | Mark notification as read |
 
@@ -608,7 +608,7 @@ Once DNS is configured, you can access the application at:
 
 | URL | Service |
 |-----|---------|
-| `http://vijaygiduthuri.in/api/users/../health` | User Service |
+| `http://vhbj.site/api/users/../health` | User Service |
 | Direct pod: `user-service-service:3001/health` | User Service |
 | Direct pod: `search-service-service:3002/health` | Search Service |
 | Direct pod: `booking-service-service:3003/health` | Booking Service |
@@ -637,7 +637,7 @@ Step 4: Configure DNS (This Guide)
     └── Get Gateway IP → Add A record on GoDaddy → Verify
          │
 Step 5: Access Application
-    └── http://vijaygiduthuri.in
+    └── http://vhbj.site
 ```
 
 ---
@@ -678,7 +678,7 @@ kubectl logs -n travel-booking deployment/<service-name>-deployment
 Check if DNS has propagated:
 
 ```bash
-dig vijaygiduthuri.in +short
+dig vhbj.site +short
 ```
 
 If it shows nothing, wait 15-30 minutes. GoDaddy DNS can be slow to update.
@@ -688,7 +688,7 @@ If it shows nothing, wait 15-30 minutes. GoDaddy DNS can be slow to update.
 Check if the API routes are healthy:
 
 ```bash
-curl -v http://vijaygiduthuri.in/api/search/flights?from=NYC&to=LAX
+curl -v http://vhbj.site/api/search/flights?from=NYC&to=LAX
 ```
 
 If you get 503, the backend service health check is failing. Check:
