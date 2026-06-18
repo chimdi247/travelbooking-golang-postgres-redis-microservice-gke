@@ -879,7 +879,7 @@ spec:
   - name: travel-booking-gateway
     namespace: travel-booking
   hostnames:
-  - vijaygiduthuri.in
+  - vhbj.site
   rules:
   - matches:
     - path:
@@ -899,7 +899,7 @@ spec:
   - name: travel-booking-gateway
     namespace: travel-booking
   hostnames:
-  - vijaygiduthuri.in
+  - vhbj.site
   rules:
   - matches:
     - path:
@@ -919,7 +919,7 @@ spec:
   - name: travel-booking-gateway
     namespace: travel-booking
   hostnames:
-  - vijaygiduthuri.in
+  - vhbj.site
   rules:
   - matches:
     - path:
