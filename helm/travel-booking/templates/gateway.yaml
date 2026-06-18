@@ -12,7 +12,7 @@ spec:
   - name: http
     port: 80
     protocol: HTTP
-    hostname: vijaygiduthuri.in
+    hostname: vhbj.site
     allowedRoutes:
       namespaces:
         from: All
