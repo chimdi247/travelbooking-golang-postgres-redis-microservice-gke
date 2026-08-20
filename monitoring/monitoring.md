@@ -879,7 +879,7 @@ spec:
   - name: travel-booking-gateway
     namespace: travel-booking
   hostnames:
-  - vhbj.site
+  - raph247.online
   rules:
   - matches:
     - path:
@@ -899,7 +899,7 @@ spec:
   - name: travel-booking-gateway
     namespace: travel-booking
   hostnames:
-  - vhbj.site
+  - raph247.online
   rules:
   - matches:
     - path:
@@ -919,7 +919,7 @@ spec:
   - name: travel-booking-gateway
     namespace: travel-booking
   hostnames:
-  - vhbj.site
+  - raph247.online
   rules:
   - matches:
     - path:
@@ -936,9 +936,9 @@ EOF
 Wait 2-5 minutes for the GCP load balancer to reprogram, then test:
 
 ```bash
-curl -s -o /dev/null -w "Grafana: HTTP %{http_code}\n" http://<DOMAIN_NAME>/grafana/
-curl -s -o /dev/null -w "Prometheus: HTTP %{http_code}\n" http://<DOMAIN_NAME>/prometheus/
-curl -s -o /dev/null -w "Alertmanager: HTTP %{http_code}\n" http://<DOMAIN_NAME>/alertmanager/
+curl -s -o /dev/null -w "Grafana: HTTP %{http_code}\n" http://raph247.online/grafana/
+curl -s -o /dev/null -w "Prometheus: HTTP %{http_code}\n" http://raph247.online/prometheus/
+curl -s -o /dev/null -w "Alertmanager: HTTP %{http_code}\n" http://raph247.online/alertmanager/
 ```
 
 All three should return **HTTP 200** or **HTTP 302** (redirect to login for Grafana).
