@@ -12,7 +12,7 @@ spec:
   - name: http
     port: 80
     protocol: HTTP
-    hostname: vhbj.site
+    hostname: raph247.online
     allowedRoutes:
       namespaces:
         from: All
