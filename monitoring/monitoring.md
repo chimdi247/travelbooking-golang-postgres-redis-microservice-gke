@@ -182,11 +182,11 @@ helm install kube-prometheus-stack prometheus-community/kube-prometheus-stack \
   --set prometheus.prometheusSpec.storageSpec=null \
   --set alertmanager.alertmanagerSpec.storage=null \
   --set grafana.persistence.enabled=false \
-  --set 'grafana.grafana\.ini.server.root_url=http://<DOMAIN_NAME>/grafana' \
+  --set 'grafana.grafana\.ini.server.root_url=http://raph247.online/grafana' \
   --set 'grafana.grafana\.ini.server.serve_from_sub_path=true' \
-  --set prometheus.prometheusSpec.externalUrl=http://<DOMAIN_NAME>/prometheus \
+  --set prometheus.prometheusSpec.externalUrl=http://raph247.online/prometheus \
   --set prometheus.prometheusSpec.routePrefix=/prometheus \
-  --set alertmanager.alertmanagerSpec.externalUrl=http://<DOMAIN_NAME>/alertmanager \
+  --set alertmanager.alertmanagerSpec.externalUrl=http://raph247.online/alertmanager \
   --set alertmanager.alertmanagerSpec.routePrefix=/alertmanager \
   --wait
 ```
