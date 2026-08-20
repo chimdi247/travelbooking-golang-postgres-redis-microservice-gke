@@ -5,8 +5,8 @@ pipeline {
         GOOGLE_APPLICATION_CREDENTIALS = credentials('gcp-service-account')
         GOOGLE_CLOUD_PROJECT           = credentials('gcp-project-id')
         GKE_CLUSTER                    = 'travelbooking-cluster'
-        GKE_ZONE                       = 'us-central1-a'
-        ARTIFACT_REGISTRY              = 'us-central1-docker.pkg.dev'
+        GKE_ZONE                       = 'us-east1-b'
+        ARTIFACT_REGISTRY              = 'us-east1-docker.pkg.dev'
         DOCKER_REPO                    = "${ARTIFACT_REGISTRY}/${GOOGLE_CLOUD_PROJECT}/travel-booking"
         IMAGE_TAG                      = "1.0.${BUILD_NUMBER}"
         HELM_CHART_PATH                = 'helm/travel-booking'
