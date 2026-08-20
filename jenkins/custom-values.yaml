@@ -1,4 +1,6 @@
 controller:
+  image:
+    tag: "2.504.3-lts-jdk21"
   admin:
     username: "vijay"
     password: "vijay@123"
