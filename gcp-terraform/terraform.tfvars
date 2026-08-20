@@ -4,7 +4,7 @@
 
 # ─── GCP Project Settings ─────────────────────────────────────────────────────
 project-id  = "project-522024ff-8338-453d-a3d" # <-- Your GCP project ID
-region      = "us-central1"                    # <-- Your preferred region
+region      = "us-east1"                    # <-- Your preferred region
 credentials = "./keys.json"                    # <-- Path to your service account JSON key
 
 # ─── VPC & Subnet ─────────────────────────────────────────────────────────────
@@ -14,7 +14,7 @@ vpc-cidr    = "10.0.0.0/16"
 
 # ─── GKE Cluster ──────────────────────────────────────────────────────────────
 cluster-name    = "travelbooking-gke"
-cluster-zone    = "us-central1-a"
+cluster-zone    = "us-east1-a"
 cluster-version = "1.33.11-gke.1197000"
 
 # ─── GKE Node Pool ────────────────────────────────────────────────────────────
