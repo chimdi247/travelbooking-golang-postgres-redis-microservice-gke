@@ -190,14 +190,14 @@ spec:
   - name: http
     port: 80
     protocol: HTTP
-    hostname: vijaygiduthuri.in
+    hostname: raph247.online
     allowedRoutes:
       namespaces:
         from: All
   - name: https
     port: 443
     protocol: HTTPS
-    hostname: vijaygiduthuri.in
+    hostname: raph247.online
     tls:
       mode: Terminate
       certificateRefs:
@@ -237,7 +237,7 @@ spec:
     namespace: travel-booking
     sectionName: http
   hostnames:
-  - vijaygiduthuri.in
+  - raph247.online
   rules:
   - filters:
     - type: RequestRedirect
@@ -251,7 +251,7 @@ EOF
 - `sectionName: http` — this route only attaches to the HTTP listener (port 80), not HTTPS
 - `RequestRedirect` filter — redirects every HTTP request to HTTPS
 - `statusCode: 301` — permanent redirect (browsers cache this, good for SEO)
-- After applying, `http://vijaygiduthuri.in/search` automatically becomes `https://vijaygiduthuri.in/search`
+- After applying, `http://raph247.online/search` automatically becomes `https://raph247.online/search`
 
 **Verify:**
 ```bash
@@ -276,10 +276,10 @@ Wait **3-5 minutes** for the GCP load balancer to program the HTTPS listener, th
 
 ```bash
 # Test HTTPS
-curl -sk -o /dev/null -w "HTTPS Frontend: %{http_code}\n" https://vijaygiduthuri.in/
-curl -sk -o /dev/null -w "HTTPS API:      %{http_code}\n" "https://vijaygiduthuri.in/api/search/flights?from=NYC&to=LAX"
-curl -sk -o /dev/null -w "HTTPS Jenkins:  %{http_code}\n" https://vijaygiduthuri.in/jenkins/login
-curl -sk -o /dev/null -w "HTTPS Grafana:  %{http_code}\n" https://vijaygiduthuri.in/grafana/
+curl -sk -o /dev/null -w "HTTPS Frontend: %{http_code}\n" https://raph247.online/
+curl -sk -o /dev/null -w "HTTPS API:      %{http_code}\n" "https://raph247.online/api/search/flights?from=NYC&to=LAX"
+curl -sk -o /dev/null -w "HTTPS Jenkins:  %{http_code}\n" https://raph247.online/jenkins/login
+curl -sk -o /dev/null -w "HTTPS Grafana:  %{http_code}\n" https://raph247.onlinegrafana/
 
 # Check TLS certificate details
 curl -svk https://vijaygiduthuri.in/ 2>&1 | grep -E "subject:|issuer:|expire"
